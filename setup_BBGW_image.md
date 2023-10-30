@@ -51,9 +51,9 @@ git pull --no-edit https://git.beagleboard.org/beagleboard/u-boot.git v2022.04-b
 - Configure and Build:
 ```
 #user@localhost:~/u-boot$
-make ARCH=arm CROSS_COMPILE=${CC} distclean
-make ARCH=arm CROSS_COMPILE=${CC} am335x_evm_defconfig
-make ARCH=arm CROSS_COMPILE=${CC}
+make -j8 ARCH=arm CROSS_COMPILE=${CC} distclean
+make -j8 ARCH=arm CROSS_COMPILE=${CC} am335x_evm_defconfig
+make -j8 ARCH=arm CROSS_COMPILE=${CC}
 ```
 
 # Linux Kernel
@@ -72,6 +72,8 @@ cd kernelbuildscripts/
 #~/kernelbuildscripts/
 git checkout origin/ti-linux-5.10.y -b tmp
 ```
+
+- Utilize multi-core processor to compile kernel faster by edit **build_kernel.sh** script and add **-j8** to all **make** commands.
 
 - Build:
 ```
