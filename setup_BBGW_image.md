@@ -318,13 +318,16 @@ sudo umount /media/rootfs
 
 - Use "Create Disk Image" function of Ubuntu Disk tool
 
-- Compress disk image:
+- Compress disk image on host computer:
+
 ```
+#user@localhost:~/$
 wget https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh
 chmod +x pishrink.sh
 sudo ./pishrink.sh -aZ src.img dst.img
 ```
 
+- To write image to microSD card, use "Restore Disk Image" and "Resize" tool of Ubuntu Disk tool. 
 
 # Beaglebone Green Wireless booting up process:
 
