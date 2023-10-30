@@ -314,7 +314,17 @@ sync
 sudo umount /media/rootfs
 ```
 
-- Insert microSD card to Beaglebone Green Wireless and power on
+# Create disk image file:
+
+- Use "Create Disk Image" function of Ubuntu Disk tool
+
+- Compress disk image:
+```
+wget https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh
+chmod +x pishrink.sh
+sudo ./pishrink.sh -aZ src.img dst.img
+```
+
 
 # Beaglebone Green Wireless booting up process:
 
@@ -322,6 +332,8 @@ sudo umount /media/rootfs
     - BBGW TX <-> USB RX
     - BBGW RX <-> USB TX
     - BBGW GND <-> USB GND
+
+- Insert microSD card to Beaglebone Green Wireless and power on
 
 - Sample booting up log:
 
