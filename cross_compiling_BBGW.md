@@ -76,6 +76,13 @@ debian@arm:~$ ./bin/hello
 Data: Hello. My name is Luong Hoai Thien!
 ```
 
+- Run test with **qemu-arm-static** on Host PC
+
+```
+arm-linux-gnueabihf-gcc -o hello hello.c -static
+qemu-arm-static hello
+```
+
 - Regarding CMAKE, here is an example of CMakeFiles.txt:
 
 ```
